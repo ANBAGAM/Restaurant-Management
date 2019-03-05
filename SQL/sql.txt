@@ -1,0 +1,17 @@
+create sequence seq_emp start with 1001 increment by 1 maxvalue 2000;
+
+create table res_employee (id number, name varchar2(20),dsgn varchar2(15),gender varchar2(10),DOB date,pass varchar2(20) default 'samosa', constraint empid_pk primary key(id));
+insert into res_employee (id,name,dsgn,gender,dob) values(seq_emp.nextval,'Anbu','admin','male','14-12-1997');
+insert into res_employee (id,name,dsgn,gender,dob) values(seq_emp.nextval,'Dhanu','Manager','male','24-07-1998');
+select * from res_employee;
+
+create or replace view res_emp_cre as select id,pass from res_employee;
+
+select * from res_emp_cre;
+
+desc res_employee;
+
+delete RES_EMPLOYEE where id=1005;
+
+
+commit;
