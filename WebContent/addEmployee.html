@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="ISO-8859-1">
+  <title>AddEmployee</title>
+</head>
+
+<body>
+  <h1 align="center">Add Employee</h1>
+  <a href="EmployeeList" >Show Employee</a>
+  <form method="post" action="AddEmployee"><center>
+    <br><br>Name: <input type="text" name="name"><br>
+    <br>Gender:<br>
+    <input type="radio" name="gender" value="male"> Male<br>
+    <input type="radio" name="gender" value="female"> Female<br>
+    <input type="radio" name="gender" value="other"> Other<br>
+    <br>
+    Date Of Birth:
+
+    <input type="date" name="bday"><br><br>
+    Designation: <select name="designation">
+      <option value="Manager">Manager</option>
+      <option value="Chef">Chef</option>
+      <option value="Accoutant">Accoutant</option>
+      <option value="OrderManager">OrderManager</option>
+
+    </select>
+    <br><br>
+    <input type="submit" value="Add Employee">
+
+  </form>
+  
+</center>
+</body>
+
+</html>
