@@ -12,6 +12,7 @@
 	<meta name="author" content="">
 	<title>Login</title>
 	<link rel="stylesheet" type="text/css" href="bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="bootstrap.css">
 	<style>
 		html,
 		body {
@@ -84,7 +85,8 @@
 		<div>
 
 		</div><br>
-		<button class="btn btn-lg btn-primary btn-block" type="submit">Sign in</button><br>
+		<button class=" btn btn-block mybtn btn-primary tx-tfm" type="submit">Sign in</button><br>
+	
 		
 	</form>
 </body>

@@ -25,16 +25,20 @@ public class LoginDAO {
 			if (resultSet.next()) {
 			
 				check = false;
+				ConnectionUtil.close(connection, preparedStatement, resultSet);
 				return check;
-
+				
+				
 			} else {
 				check = true;
+				ConnectionUtil.close(connection, preparedStatement, resultSet);
 				return check;
 			}
-
+			
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
+		ConnectionUtil.close(connection, preparedStatement, resultSet);
 		return check;
 
 	}
@@ -70,8 +74,32 @@ public class LoginDAO {
 
 			e.printStackTrace();
 		}
+		ConnectionUtil.close(connection, preparedStatement, resultSet);
 		return checkp;
 
+	}
+	
+	
+	
+	public String checkEmployeeDesgination(Login login) throws SQLException{
+		
+		String desig="  ";
+		
+		Connection connection = ConnectionUtil.getConnection();
+		String sql = "select dsgn from res_employee where id=?";
+		PreparedStatement preparedStatement = connection.prepareStatement(sql);
+		preparedStatement.setLong(1, login.getLoginid());
+		
+		resultSet = preparedStatement.executeQuery();
+		if(resultSet.next()){
+			
+			desig = resultSet.getString(1);
+		}
+		ConnectionUtil.close(connection, preparedStatement, resultSet);
+		return desig;
+		
+		
+		
 	}
 	
 }
